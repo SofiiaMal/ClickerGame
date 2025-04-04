@@ -1,0 +1,299 @@
+.russo-one-regular {
+    font-family: "Russo One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    background-color: white;
+    font-size: 150%;
+    font-family: "Russo One";
+    color: black;
+    margin: 0;
+    padding: 0;
+    margin-top: -30px;
+    
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container { /* grid */
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . . decor3 decor3 decor3 decor3 decor3 . side side side side side"
+      ". . . . . . . . . side side side side side"
+      ". game game game game game game . . side side side side side"
+      ". game game game game game game . . side side side side side"
+      ". game game game game game game . . side side side side side"
+      ". game game game game game game . . side side side side side"
+      ". game game game game game game . . side side side side side"
+      ". btns btns btns btns btns btns . . side side side side side"
+      ". . . . . . . . . side side side side side"
+      "decor1 decor1 decor1 . . . . . . side side side side side"
+      "decor1 decor1 decor1 . . decor2 decor2 decor2 decor2 side side side side side"
+      "decor1 decor1 decor1 . . decor2 decor2 decor2 decor2 side side side side side"
+      ". . . . . decor2 decor2 decor2 decor2 side side side side side"; 
+
+    width: 100vw; /* full viewport width */
+    height: 104.1vh; /* full viewport height */
+    overflow: hidden; /* prevents scrolling */
+    
+}
+
+.side { /*grid*/ 
+    display: grid; 
+    grid-template-columns: 0.4fr 1.6fr 1fr 1fr 1fr 1.6fr 0.4fr; 
+    grid-template-rows: 1fr 1fr 1fr 0.5fr 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". . . . . . ."
+      ". records records records records records ."
+      ". records records records records records ."
+      ". . . . . . ."
+      ". misc misc misc misc misc ."
+      ". . . . . . ."
+      ". . . . . . ."
+      ". . . . . . ."
+      ". achv achv achv achv achv ."
+      ". achv achv achv achv achv ."
+      ". achv achv achv achv achv ."
+      ". achv achv achv achv achv ."
+      ". achv achv achv achv achv ."
+      ". achv achv achv achv achv ."
+      ". . . . . . ."; 
+    grid-area: side; 
+}
+
+.side {
+    background-color: #77debe;
+    border-left: double;
+    border-color: black;
+    border-width: 7px;
+}
+
+.misc  {
+    grid-area: misc;
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.misc button {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 22px;
+}
+
+.records { 
+    grid-area: records; 
+    background-color: rgba(255, 255, 255, .4);
+    line-height: 0.7;
+    padding-left: 10px;
+}
+
+.achv { 
+    grid-area: achv; 
+    background-color: rgba(255, 255, 255, .4);
+    padding-left: 16px;
+    line-height: 2;
+}
+
+.achv img {
+    width: 100px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    filter: grayscale(1);
+}
+
+.achv button{
+    margin-left: 36px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.guide-dropdown{
+    display: none;
+    position: absolute;
+    background-color: #a7a7a7;
+    color: white;
+    text-shadow: 1px 1px black;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    line-height: 0.8;
+    padding-left: 10px;
+    padding-right: 10px;
+    top: 50px;
+    right: 100px;
+}
+
+.game { 
+    text-align: center;
+    grid-area: game; 
+    background-color: #DE77D5;
+    font-size: 40px;
+    line-height: 0;
+
+    box-shadow: 10px 10px 10px 10px rgb(128, 128, 128);
+
+    border: solid;
+    box-sizing: content-box;
+
+    border-image-slice: 96 95 86 90;
+    border-image-width: 30px 30px 0px 30px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: round stretch; 
+    border-image-source: url(/ScoreGame/Images/whiteFrame.png);
+    border-image-outset: 18px;
+}
+
+.pulse{
+    z-index: -1;
+    position: relative;
+    width: 100%;
+    height: 80%;
+    margin-top: -230px;
+    background: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: inherit;
+}
+
+.pulse span{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background: inherit;
+    opacity: 1;
+    animation: pulseAnimate 2s cubic-bezier(.33,.37,0,1) 1;
+    animation-delay: calc(0.2s * var(--i));
+    border-radius: calc(10px * var(--i));
+    transform: skew(30deg, 5deg);
+}
+
+@keyframes pulseAnimate {
+    
+    50%{
+        opacity: 0.3
+    }
+    
+    100%{
+        opacity: 0;
+        transform: scale(1.3);
+    }
+}
+
+.Score{
+    z-index: 2;
+    width: auto;
+    height: 65%;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
+    font-size: 50px;
+
+}
+
+.btns { 
+    grid-area: btns; 
+    background-color: rgb(233, 233, 233);
+    text-align: center;
+    border: solid;
+    box-sizing: content-box;
+    box-shadow: 10px 10px 10px 10px rgb(128, 128, 128);
+
+    border-image-slice: 96 95 86 90;
+    border-image-width: 0px 30px 30px 30px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: round stretch; 
+    border-image-source: url(/ScoreGame/Images/whiteFrame.png);
+    border-image-outset: 18px;
+    
+}
+
+.buttons {
+    font-family: "Russo One";
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 1px;
+    padding-left: 7px;
+    padding-right: 7px;
+    line-height: 1.5;
+    padding-top: -10px;
+    background-color: #DE77D5;
+    border-radius: 5px;
+    border: outset #ffffff;
+}
+
+button:active{
+    filter: hue-rotate(20deg);
+}
+
+#decor1 {
+    color: #395f54;
+    text-shadow: 1px 1px #000000;
+    grid-area: decor1;
+    background-color: #77debe;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 1;
+
+    box-shadow: 10px 10px 10px 10px rgb(128, 128, 128);
+
+    border-image-slice: 65 62 62 62;
+    border-image-width: 20px 20px 20px 20px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: repeat round; 
+    border-image-source: url(/ScoreGame/Images/goldFrame.png);
+    border-image-outset: 20px;
+}
+
+#decor2 { 
+    z-index: -1;
+    grid-area: decor2; 
+    background-color: #DE77D5;
+    color: #5f395b;
+    text-shadow: 1px 1px #000000;
+    padding-left: 10px;
+    line-height: 2;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;
+
+    box-shadow: 10px 10px 10px 10px rgb(128, 128, 128);
+
+    border-image-slice: 41 38 38 37;
+    border-image-width: 20px 0px 20px 20px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: stretch stretch; 
+    border-image-source: url(/ScoreGame/Images/blackFrame.png);
+    border-image-outset: 20px;
+}
+
+#decor3 { 
+    grid-area: decor3; 
+    background-color: #DE77D5;
+    color: #5f395b;
+    text-shadow: 1px 1px #000000;
+    padding-left: 10px;
+    padding-top: 20px;
+
+    box-shadow: 10px 10px 10px 10px rgb(128, 128, 128);
+
+    border-image-slice: 49 40 44 44;
+    border-image-width: 20px 20px 20px 20px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: repeat stretch; 
+    border-image-source: url(/ScoreGame/Images/marbleFrame.png);
+    border-image-outset: 20px;
+}
+
+button {
+    cursor: pointer;
+}

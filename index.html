@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <title>ScoreGame</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UFT-8" />
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <div class="side">
+
+                <div class="records">
+                    <p id="currentScore">Current Score : 0</p>
+                    <p id="HighestScore">Highest Score : 0</p>
+                </div>
+
+                <div class="misc">
+                    <button id="resetHighest">Reset highest score</button>
+                </div>
+
+                <div class="achv">
+                    <span>There are some achivements!</span>
+                    <button id="DropdownButton">Guide</button> <br>
+                    <div id="GuideDropdown" class="guide-dropdown">
+                        <br>
+                        <p>A winner!</p>
+                        <p>Reach a score of 100</p>
+                        <br>
+                        <p>So much time, and for what?</p>
+                        <p>Reach a score of 1000</p>
+                        <br>
+                        <p>Click me!</p>
+                        <p>Click the achivement icon)</p>
+                        <br>
+                        <p>Back and forth</p>
+                        <p>Get a Score of -50 and 100 thrice in one game</p>
+                        <br>
+                        <p>Perfectly balanced</p>
+                        <p>Get a Highest Score of 50 and Current Score of -50</p>
+                        <br>
+                    </div>
+                    <div>
+                        <span >
+                            <img id="achv100" src="./Images/achivement100.png" alt="">
+                        </span>
+                        <span>
+                            <img id="achv1000" src="./Images/achivement1000.png" alt="">
+                        </span>
+                        <span>
+                            <img id="achvCLICK" src="./Images/achivementCLICK.png" alt="">
+                        </span>
+                        <span>
+                            <img id="achvREPEAT" src="./Images/achivementBACKandFORTH.png" alt="">
+                        </span>
+                        <span>
+                            <img id="achvBALANCE" src="./Images/achivementBALANCE.png" alt="">
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            
+            <div class="game">
+                <p>Your Score is :</p>
+
+                <div class="Score">
+                    <p id="myScore">0</p>
+                </div>
+                
+                <div class="Animation">
+                    <span style="--i:0"></span>
+                    <span style="--i:1"></span>
+                    <span style="--i:2"></span>
+                    <span style="--i:3"></span>
+                </div>
+                        
+                
+                   
+            </div>
+
+            <div class="btns">
+                <button id="decreaseScore" class="buttons">Decrease Score</button>
+                <button id="resetScore" class="buttons">Reset Score</button>
+                <button id="increaseScore" class="buttons">Increase Score</button>
+            </div>
+            
+
+            <div class="decorSide" id="decor1">
+                <p>Fun Fact : </p>
+                <p id="FunFact">There will be a fun fact!</p>
+            </div>
+
+            <div class="decorMain" id="decor2">
+                <p id="Hype">C'mon, start clicking!</p>
+            </div>
+
+            <div class="decorMain" id="decor3">
+                <p>To start the game, just start clicking score!</p>
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+
+</html>
